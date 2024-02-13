@@ -2,7 +2,6 @@ import React, { useEffect } from "react"; // Mengimpor useEffect dari React
 import SEO from "../common/seo";
 import HomeOne from "../components/homes/home";
 import Wrapper from "../layout/wrapper";
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const Home = () => {
   useEffect(() => {
@@ -22,7 +21,6 @@ const Home = () => {
     <Wrapper>
       <SEO pageTitle={"Home"} />
       <HomeOne />
-      <SpeedInsights />
     </Wrapper>
   );
 };
