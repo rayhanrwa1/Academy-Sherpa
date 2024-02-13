@@ -3,15 +3,15 @@ import React from 'react';
 
 
 // brand img import here 
-import brand_img_1 from "../../../public/assets/img/brand/brand-inner-1.png"
-import brand_img_2 from "../../../public/assets/img/brand/brand-inner-2.png"
-import brand_img_3 from "../../../public/assets/img/brand/brand-inner-3.png"
-import brand_img_4 from "../../../public/assets/img/brand/brand-inner-4.png"
-import brand_img_5 from "../../../public/assets/img/brand/brand-inner-5.png"
-import brand_img_6 from "../../../public/assets/img/brand/brand-inner-6.png"
-import brand_img_7 from "../../../public/assets/img/brand/brand-inner-7.png"
-import brand_img_8 from "../../../public/assets/img/brand/brand-inner-8.png"
-import brand_img_9 from "../../../public/assets/img/brand/brand-inner-9.png"
+import brand_img_1 from "../../../public/assets/img/brand/brand-inner-1.svg"
+import brand_img_2 from "../../../public/assets/img/brand/brand-inner-2.svg"
+import brand_img_3 from "../../../public/assets/img/brand/brand-inner-3.svg"
+import brand_img_4 from "../../../public/assets/img/brand/brand-inner-4.svg"
+import brand_img_5 from "../../../public/assets/img/brand/brand-inner-5.svg"
+import brand_img_6 from "../../../public/assets/img/brand/brand-inner-6.svg"
+import brand_img_7 from "../../../public/assets/img/brand/brand-inner-7.svg"
+import brand_img_8 from "../../../public/assets/img/brand/brand-inner-8.svg"
+import brand_img_9 from "../../../public/assets/img/brand/brand-inner-9.svg"
 
 const brand_content = {
     titel: "Dipercaya oleh Ratusan Mahasiswa dan Pelajar",

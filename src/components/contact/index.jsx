@@ -14,7 +14,7 @@ const Contact = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <Breadcrumb title={"Tim Sherpa"} innertitle={"Tim Sherpa"}/>
+            <Breadcrumb title={"Kontak"} innertitle={"Kontak"}/>
             <OfficeLocation />
             <ContactFormArea />
             <ContactInner />
