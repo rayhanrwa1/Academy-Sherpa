@@ -98,7 +98,7 @@
             font-size: 18px;
             line-height: 28px;
             @media #{$md,$xs,$lg}{
-                display: none;
+                // display: none;
             }
         }
     }
