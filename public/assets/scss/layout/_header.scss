@@ -68,7 +68,7 @@
         top: 0;
         left: 0;
         right: 0;
-        background-color: #fff;
+        background-color: #123F4A;
         opacity: 1;
         visibility: visible;
         width: 100%;
@@ -139,7 +139,7 @@
         top: 0;
         left: 0;
         right: 0;
-        background-color: var(--tp-common-white);
+        background-color: #123F4A;;
         opacity: 1;
         visibility: visible;
         width: 100%;
@@ -168,7 +168,7 @@
             & ul{
                 & li{
                     & a{
-                        color: var(--tp-common-black);
+                        color: #fff;
                     }
                 }
             }
@@ -337,7 +337,7 @@
                     & a{
                         font-weight: 500;
                         font-size: 15px;
-                        color: var(--tp-common-black);
+                        color: #fff;
                         display: inline-block;
                         padding: 40px 0;
                     }
