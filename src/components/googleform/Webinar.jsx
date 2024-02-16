@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import Wrapper from "../../layout/wrapper";
 import Image from 'next/image';
-import webinarImage from "../../../public/assets/img/Event/Webinar.svg";
+// import webinarImage from "../../../public/assets/img/Event/Webinar.svg";
 import Link from 'next/link';
 import HeaderSix from "@/src/layout/headers/header-6";
 import FooterFive from "@/src/layout/footers/footer";
 import PlatformArea from "../../common/platform-area";
 import HeroBanner from '@/src/common/breadcrumbs/breadcrumb-2';
+import Gambar1 from '../../../public/assets/img/Event/Flyer Webinar Beasiswa Dalam Negeri 01.png';
 
 const IndexPage = () => {
+    const [nama, setNama] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
     const [university, setUniversity] = useState("");
     const [otherUniversity, setOtherUniversity] = useState("");
     const [showOtherUniversityInput, setShowOtherUniversityInput] = useState(false);
@@ -19,7 +23,13 @@ const IndexPage = () => {
     const [informationSource, setInformationSource] = useState("");
     const [motivation, setMotivation] = useState("");
     const [scholarshipGoal, setScholarshipGoal] = useState("");
-
+    const [paymentMethod, setPaymentMethod] = useState("");
+   
+   
+    const handlePaymentMethodChange = (event) => {
+        setPaymentMethod(event.target.value);
+    };
+    
     const handleUniversityChange = (event) => {
         const selectedUniversity = event.target.value;
         if (selectedUniversity === "other") {
@@ -38,10 +48,25 @@ const IndexPage = () => {
         const formData = new FormData(event.target);
         formData.append("access_key", "374cde96-e083-44b2-9085-6740597a2d7d");
 
+        const file = event.target.file1.files[0];
+        const filesize = file.size / 1024;
+
+        if (filesize > 1000) {
+            alert("Please upload file less than 1 MB");
+            setLoading(false);
+            return;
+        }
+
+        formData.append("subject", "New Submission from Web3Forms");
+
         const res = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             body: formData
-        }).then((res) => res.json());
+        });
+
+        const responseData = await res.json();
+        console.log(responseData);  // Periksa respons untuk menemukan informasi kesalahan
+        
 
         setLoading(false);
         if (res.success) {
@@ -75,6 +100,7 @@ const IndexPage = () => {
         setScholarshipGoal(event.target.value);
     };
 
+
     const styles = {
         container: {
             display: 'flex',
@@ -107,6 +133,13 @@ const IndexPage = () => {
             padding: '10px',
             border: '1px solid #ccc',
             borderRadius: '15px',
+        },
+        false: {
+            width: '100%',
+            padding: '10px',
+            border: '1px solid #ccc',
+            borderRadius: '15px',
+
         },
         submitButton: {
             width: '100%',
@@ -143,28 +176,44 @@ const IndexPage = () => {
             <HeroBanner title={"Pendaftran Peserta"} innertitle={"Webinar Beasiswa Dalam Negeri (Vol.01)"} />
             <PlatformArea style_carrer={true} />
             <main>
+             <div style={{ textAlign: 'center', margin: '50px 0' }}>
+                    <div style={{ border: '2px solid #ccc', borderRadius: '10px', padding: '20px', display: 'inline-block' }}>
+                        <div style={{ border: '10px solid #123F4A', borderRadius: '10px', marginBottom: '20px', textAlign: 'center' }}>
+                            <Image src={Gambar1} alt="Poster Image" width={400} height={600} />
+                        </div>
+                        <a href="http://bit.ly/WebinarBeasiswaSherpa" target="_blank" rel="noopener noreferrer" style={{ display: 'block', margin: '0 auto', textDecoration: 'none' }}>
+                        </a>
+                    </div>
+                </div>
                 <div style={styles.container}>
                     <div style={styles.formContainer}>
                         <form style={styles.form} onSubmit={onSubmit}>
-                            <Image src={webinarImage} alt="Webinar Image" layout="responsive" width={1920} height={800} style={styles.image} />
+                            {/* <Image src={webinarImage} alt="Webinar Image" layout="responsive" width={1920} height={800} style={styles.image} /> */}
                             <div style={styles.formGroup}>
                                 <h3 style={{ fontSize: '1.2em', margin: '10px 0' }}>Judul di Bawah Gambar</h3>
                                 <p style={{ fontSize: '0.9em', marginBottom: '10px' }}>Deskripsi di Bawah Gambar</p>
                                 <div style={styles.sectionDivider}></div>
                             </div>
                             <div style={styles.formGroup}>
+                                <label htmlFor="webinar">Event:</label>
+                                <input type="text" id="webinar" name="webinar" style={styles.false} value="Webinar Beasiswa Dalam Negeri (Vol 1)" readOnly />
+                            </div>
+                            <div style={styles.formGroup}>
                                 <label htmlFor="email">Email:</label>
-                                <input type="email" id="email" name="email" style={styles.input} required />
+                                <input type="email" id="email" name="email" style={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} required />
+                            </div>
+                            <div style={styles.formGroup}>
+                                <label htmlFor="nama">Nama</label>
+                                <input type="text" id="nama" name="nama" style={styles.input} value={nama} onChange={(e) => setNama(e.target.value)} required />
                             </div>
                             <div style={styles.formGroup}>
                                 <label htmlFor="phone">No Telp:</label>
-                                <input type="tel" id="phone" name="phone" style={styles.input} required />
+                                <input type="tel" id="phone" name="phone" style={styles.input} value={phone} onChange={(e) => setPhone(e.target.value)} required />
                             </div>
                             <div style={styles.formGroup}>
                                 <label htmlFor="university">Pilih Universitas:</label>
                                 <select id="university" name="university" style={styles.input} onChange={handleUniversityChange} value={university}>
                                     {/* Options universitas */}
-                                    <option value="Institut Teknologi Bandung (ITB)">Institut Teknologi Bandung (ITB)</option>
                                     <option value="Institut Teknologi Bandung (ITB)">Institut Teknologi Bandung (ITB)</option>
                                     <option value="Universitas Indonesia (UI)">Universitas Indonesia (UI)</option>
                                     <option value="Universitas Gadjah Mada (UGM)">Universitas Gadjah Mada (UGM)</option>
@@ -253,26 +302,12 @@ const IndexPage = () => {
                                 <textarea id="scholarshipGoal" name="scholarshipGoal" style={styles.input} value={scholarshipGoal} onChange={handleScholarshipGoalChange} required />
                             </div>
                             <div style={styles.formGroup}>
-                                <label htmlFor="file1">Lampirkan Bukti Share Flyer dan Broadcast ke 5 group WhatsApp atau Telegram (Upload File)</label>
-                                <input type="file" id="file1" name="file1" accept="image/*" required />
-                            </div>
-                            <div style={{ fontSize: '0.8em', marginTop: '10px' }}>
-                                <p>Setelah mengunggah file, pastikan Anda juga <a href="https://bit.ly/SharePostinganBU2023">klik di sini</a> untuk membagikan postingan Bukti Share Anda di Instagram.</p>
-                            </div>
-                            <div style={styles.formGroup}>
-                                <label htmlFor="instagramProof">Lampirkan Bukti Share Instagram Story Postingan Sherpa Academy (Upload File)</label>
-                                <input type="file" id="instagramProof" name="instagramProof" accept="image/*" required />
-                            </div>
-                            <div style={{ fontSize: '0.8em', marginTop: '10px' }}>
-                                <p>Setelah mengunggah file, pastikan Anda juga <a href="https://bit.ly/SharePostinganBU2023">klik di sini</a> untuk membagikan postingan Bukti Share Anda di Instagram.</p>
-                            </div>
-                            <div style={styles.formGroup}>
-                                <label htmlFor="file2">Lampirkan Bukti Screenshot Follow @sherpa_academy (Upload File)</label>
-                                <input type="file" id="file2" name="file2" accept="image/*" required />
-                            </div>
-                            <div style={styles.formGroup}>
-                                <label htmlFor="file3">Lampirkan Bukti Tag 3 Teman di Kolom Komentar (Upload File)</label>
-                                <input type="file" id="file3" name="file3" accept="image/*" required />
+                                <label htmlFor="paymentMethod">Metode Pembayaran:</label>
+                                <select id="paymentMethod" name="paymentMethod" style={styles.input} onChange={handlePaymentMethodChange} value={paymentMethod} required>
+                                    <option value="">Pilih metode pembayaran</option>
+                                    <option value="QRIS">QRIS</option>
+                                    <option value="BNI">BNI</option>
+                                </select>
                             </div>
                             {/* hCaptcha implementation */}
                             <div className="h-captcha" data-captcha="true"></div>
@@ -309,3 +344,29 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+
+
+// Upload File 
+
+
+                //    {/* <div style={{ marginTop: '10px', padding: '15px', border: '1px solid #ccc', borderRadius: '15px' }}>
+                //                 <p>Mohon unggah bukti pembayaran untuk proses pendaftaran. Untuk informasi lebih lanjut tentang pembayaran, silakan kunjungi <a href="https://www.academysherpa.com/team" target="_blank" rel="noopener noreferrer">halaman tim kami</a>.</p>
+                //                     <div style={{ display: 'flex', flexDirection: 'column' }}>
+                //                         <div style={{ display: 'flex', alignItems: 'center' }}>
+                //                             <label htmlFor="file1" style={{ borderRadius: '50%', backgroundColor: '#123F4A', color: '#fff', padding: '15px', fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background-color 0.3s ease' }}>
+                //                                 <svg id="Layer_1" enable-background="new 0 0 512 512" height="32" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg">
+                //                                     <g clip-rule="evenodd" fill-rule="evenodd">
+                //                                         <circle cx="256" cy="256" fill="#60b7ff" r="225"/>
+                //                                         <path d="m256 15c66.548 0 126.799 26.976 170.411 70.588 43.614 43.613 70.589 103.864 70.589 170.412s-26.975 126.799-70.588 170.411c-43.613 43.614-103.864 70.589-170.412 70.589s-126.799-26.975-170.412-70.588c-43.612-43.613-70.588-103.864-70.588-170.412s26.976-126.799 70.588-170.412c43.613-43.612 103.864-70.588 170.412-70.588zm147.787 93.213c-37.821-37.82-90.072-61.213-147.787-61.213s-109.966 23.393-147.787 61.214c-37.82 37.82-61.213 90.071-61.213 147.786s23.393 109.966 61.214 147.786c37.82 37.821 90.071 61.214 147.786 61.214s109.966-23.393 147.786-61.214c37.821-37.82 61.214-90.071 61.214-147.786s-23.393-109.966-61.213-147.787z" fill="#efefef"/>
+                //                                         <path d="m359.022 205.439c29.574 6.909 51.256 33.512 51.256 64.557 0 36.488-29.795 66.283-66.283 66.283h-71.995v56.148c0 8.836-7.163 16-16 16s-16-7.163-16-16v-56.148h-71.995c-36.487 0-66.283-29.795-66.283-66.283 0-31.044 21.682-57.647 51.256-64.557 7.001-50.997 50.753-89.721 103.022-89.721s96.021 38.725 103.022 89.721z" fill="#efefef"/>
+                //                                         <path d="m240 336.279v-85.802l-10.631 7.507c-7.214 5.074-17.176 3.339-22.25-3.875s-3.339-17.176 3.875-22.25l35.517-25.084c5.379-3.972 12.905-4.27 18.675-.212l35.818 25.296c7.214 5.074 8.949 15.036 3.875 22.25s-15.036 8.949-22.25 3.875l-10.629-7.508v85.802h-32z" fill="#60b7ff"/>
+                //                                     </g>
+                //                                 </svg>
+                //                             </label>
+                //                             <span id="file-name" style={{ fontWeight: 'bold', marginLeft: '10px' }}>Unggah File </span>
+                //                         </div>
+                                        
+                //                         <input type="file" id="file1" name="file1" accept="image/*" style={{ display: 'none' }} onChange={(e) => document.getElementById('file-name').innerText = e.target.files[0].name} required />
+                //                     </div>
+                //             </div> */}
