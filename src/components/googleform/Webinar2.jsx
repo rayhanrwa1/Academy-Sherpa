@@ -7,7 +7,7 @@ import PlatformArea from "../../common/platform-area";
 import HeroBanner from '@/src/common/breadcrumbs/breadcrumb-2';
 import Gambar1 from '../../../public/assets/img/Event/Flyer Webinar Beasiswa Dalam Negeri 01.png';
 
-const a = () => {
+const IndexPage = () => {
     return (
         <Wrapper>
             <HeaderSix />
@@ -30,4 +30,4 @@ const a = () => {
     );
 };
 
-export default a;
+export default IndexPage;
