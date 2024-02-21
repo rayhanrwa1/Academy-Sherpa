@@ -42,11 +42,10 @@ const menu_data = [
     mega_menu: false,
     has_dropdown: false,
     title: "Event",
-    link: "/blog",
+    link: "/event",
     active: "",
     sub_menus: [
-      { link: "/project", title: "Project" },
-      { link: "/project-details", title: "Project Details" }, 
+      { link: "/program", title: "Program" },
     ],
   },
 

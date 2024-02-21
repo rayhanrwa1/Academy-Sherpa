@@ -12,10 +12,9 @@ const job_data = {
     job_info: [
         {
             id:1, 
-            category: "Webinar Beasiswa Dalam Negeri (Vol.01)",
-            job_resecudle: "Minggu, 18 Februari 2024",
-            job_time: "19:00 WIB - Selesai",
-            job_location: "Online",
+            category: "Belum Tersedia",
+            job_time: "Belum Tersedia",
+            job_location: "Belum Tersedia",
         },
         {
             id:2, 

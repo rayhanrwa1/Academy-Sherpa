@@ -6,7 +6,7 @@ import useBreadcrumbTitleAnime from "@/src/hooks/useBreadcrumbTitleAnime";
 
 import shape_1  from "../../../public/assets/img/breadcrumb/breadcrumb-shape-1.png";
 import shape_2  from "../../../public/assets/img/breadcrumb/breadcrumb-shape-2.png";
-import shape_3  from "../../../public/assets/img/breadcrumb/breadcrumb-3.png";
+import shape_3  from "../../../public/assets/img/breadcrumb/breadcrumb-3.svg";
 import shape_4  from "../../../public/assets/img/breadcrumb/breadcrumb-sub-1.png";
  
 
@@ -76,7 +76,7 @@ const BreadcrumbTwo = ({ title, innertitle, team_details, career_details }) => {
                   data-wow-duration=".9s"
                   data-wow-delay=".4s"
                 >
-                  <Image src={shape_4} alt="theme-pure" />
+                  {/* <Image src={shape_4} alt="theme-pure" /> */}
                 </div>
               </div>
             </div>

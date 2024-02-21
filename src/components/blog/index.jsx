@@ -5,7 +5,7 @@ import React from "react";
 import CtaArea from "../contact/cta-area";
 import BlogGrid from "./blog-grid";
 import Portfolio from "./portfolio";
-import JobArea from "../../components/about/job-area";
+import JobArea from "../about/job-area";
 
 const Blog = () => {
   return (

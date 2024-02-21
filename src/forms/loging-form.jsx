@@ -115,7 +115,7 @@ const LogingForm = () => {
           </button>
         </div>
         <div className="signin-banner-from-register">
-          <Link href="/sign-in">
+          <Link href="/register">
             Don't have account ? <span>Register</span>
           </Link>
         </div>

@@ -65,14 +65,14 @@ const ServicesArea = () => {
                            <div className="tp-service__top-content">
                               <h3 className="tp-service__title-white">{title_2}</h3>
                               <p>{des}</p>
-                              <Link className="tp-btn-orange tp-btn-hover alt-color-white" href="/event">
+                              <Link className="tp-btn-orange tp-btn-hover alt-color-white" href="/event-kelas">
                                  <span>{btn_text}</span>
                                  <b></b>
                               </Link>
                            </div>
                            <div className="tp-service__dashdboard-sm-img">
-                              <Image className="wow tpfadeRight" data-wow-duration=".9s" data-wow-delay=".7s" 
-                              src={img} alt="theme-pure" />
+                              {/* <Image className="wow tpfadeRight" data-wow-duration=".9s" data-wow-delay=".7s" 
+                              src={img} alt="theme-pure" /> */}
                            </div>
                         </div>
                      </div>

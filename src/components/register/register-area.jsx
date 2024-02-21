@@ -15,8 +15,8 @@ import shape_5 from "../../../public/assets/img/login/login-4.png";
 
 
 const register_content = {
-   bg_img: "/assets/img/login/login-bg-shape.png",
-   banner_title: <>Welcome To <br /> Your Softec System.</>, 
+   bg_img: "/assets/img/login/login-bg-shape.svg",
+   banner_title: <>Dashboard<br />Pendaftaran Akun</>, 
 }
 const {bg_img, banner_title, }  = register_content
 
@@ -30,24 +30,25 @@ const RegisterArea = () => {
                   <div className="signin-banner-left-box signin-banner-bg p-relative" 
                         style={{backgroundImage: `url(${bg_img})`}}>
                      <div className="signin-banner-bottom-shape">
-                        <Image src={shape_1} alt="theme-pure"/>
+                        {/* <Image src={shape_1} alt="theme-pure"/> */}
                      </div>
                      <div className="signin-banner-left-wrap">
-                        <div className="signin-banner-title-box mb-100">
-                           <h4 className="signin-banner-title tp-char-animation">{banner_title}</h4>
-                        </div>
+                     <div className="signin-banner-title-box mb-100">
+                        <h4 className="signin-banner-title tp-char-animation text-black">{banner_title}</h4>
+                     </div>
+
                         <div className="signin-banner-img-box position-relative">
                            <div className="signin-banner-img signin-img-1 d-none d-md-block z-index-3">
-                              <Image src={shape_2} alt="theme-pure"/>
+                              {/* <Image src={shape_2} alt="theme-pure"/> */}
                            </div>
                            <div className="signin-banner-img signin-img-2 d-none d-md-block">
-                              <Image src={shape_3} alt="theme-pure"/>
+                              {/* <Image src={shape_3} alt="theme-pure"/> */}
                            </div>
                            <div className="signin-banner-img signin-img-3 d-none d-md-block z-index-5">
-                              <Image src={shape_4} alt="theme-pure"/>
+                              {/* <Image src={shape_4} alt="theme-pure"/> */}
                            </div>
                            <div className="signin-banner-img signin-img-4 d-none d-sm-block">
-                              <Image src={shape_5} alt="theme-pure"/>
+                              {/* <Image src={shape_5} alt="theme-pure"/> */}
                            </div>
                         </div>
                      </div>

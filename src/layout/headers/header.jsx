@@ -49,7 +49,7 @@ const Header = () => {
                         <div className="col-6">
                            <div className="header-top__link">
                               <span>Ayoo! <i>Bergabung dengan Sherpa Sekarang. </i></span>
-                              <Link href="/event">
+                              <Link href="/event-kelas">
                                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.40918 9L5.591 5L1.40918 1" stroke="white" strokeWidth="1.5"
                                        strokeLinecap="round" strokeLinejoin="round"/>
@@ -84,7 +84,7 @@ const Header = () => {
                         <div className="col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-6">
                            <div className="header-bottom__right d-flex align-items-center justify-content-end">
                               <div className="header-bottom__btn d-flex align-items-center">
-                                 <Link className="tp-btn-white tp-btn-hover alt-color-black d-none d-md-inline-block" href="/event">
+                                 <Link className="tp-btn-white tp-btn-hover alt-color-black d-none d-md-inline-block" href="/event-kelas">
                                     <span className="white-text">Daftar Sekarang</span>
                                     <b></b>
                                  </Link>

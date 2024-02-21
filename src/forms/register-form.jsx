@@ -124,6 +124,11 @@ const RegisterForm = () => {
         <div className="signin-banner-from-btn mb-20">
           <button type="submit" className="signin-btn ">Register</button>
         </div>
+        <div className="signin-banner-from-register">
+          <Link href="/sign-in">
+             have account ? <span>Sign-In</span>
+          </Link>
+        </div>
       </form>
     </>
   );

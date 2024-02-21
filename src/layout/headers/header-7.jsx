@@ -4,7 +4,7 @@ import React,{useState} from 'react';
 import Image from 'next/image';
 import NavMenu from './nav-menu';
 // logo 
-import logo_white from "../../../public/assets/img/logo/logo-white.png";
+import logo_white from "../../../public/assets/img/logo/logo-black.png";
 
 
 const HeaderSeven = () => {
@@ -17,9 +17,9 @@ const HeaderSeven = () => {
                     <div className="container-fluid">
                         <div className="row align-items-center">
                         <div className="col-6">
-                            <div className="header-signin-logo">
+                            {/* <div className="header-signin-logo">
                                 <Link href="/"><Image src={logo_white} alt="" /></Link> 
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-6">
                             <div className="header-signin-bar text-end tp-menu-bar">

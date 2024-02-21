@@ -43,7 +43,7 @@ const footer_content  = {
             links: [
                 {name: "Home", link: "#"},
                 {name: "About", link: "/about"},
-                {name: "Event", link: "/blog"},
+                {name: "Event", link: "/event"},
                 {name: "Team", link: "/team"},
                 {name: "Contact", link: "/contact"},
             ]
